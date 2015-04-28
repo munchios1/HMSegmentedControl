@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol HMSegmentDelegate <NSObject>
+- (void)didSelectItemAtIndex:(NSInteger )selectedIndex;
+@end
+
 @class HMSegmentedControl;
 
 typedef void (^IndexChangeBlock)(NSInteger index);
@@ -54,7 +59,8 @@ typedef enum {
 @property (nonatomic, strong) NSArray *sectionTitles;
 @property (nonatomic, strong) NSArray *sectionImages;
 @property (nonatomic, strong) NSArray *sectionSelectedImages;
-
+@property (nonatomic, assign) id <HMSegmentDelegate> delegate;
+- (void)reloadData;
 /**
  Provide a block to be executed when selected index is changed.
  

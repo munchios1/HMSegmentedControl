@@ -25,6 +25,7 @@
 @end
 
 @implementation HMScrollView
+@synthesize delegate;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if (!self.dragging) {
@@ -211,6 +212,11 @@
 
 - (void)setBorderType:(HMSegmentedControlBorderType)borderType {
     _borderType = borderType;
+    [self setNeedsDisplay];
+}
+
+- (void)reloadData {
+    self.selectedSegmentIndex = -1;
     [self setNeedsDisplay];
 }
 
@@ -712,6 +718,14 @@
         } else if (self.type == HMSegmentedControlTypeTextImages || self.type == HMSegmentedControlTypeText) {
             sectionsCount = [self.sectionTitles count];
         }
+        
+        //------ code entry ---
+        
+        if ([self.delegate respondsToSelector:@selector(didSelectItemAtIndex:)]) {
+            [self.delegate didSelectItemAtIndex:segment];
+        }
+        
+        //end code block
         
         if (segment != self.selectedSegmentIndex && segment < sectionsCount) {
             // Check if we have to do anything with the touch event
