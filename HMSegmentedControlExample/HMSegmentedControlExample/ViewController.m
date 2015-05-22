@@ -35,13 +35,21 @@
     
     
     // Segmented control with scrolling
-    HMSegmentedControl *segmentedControl1 = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"One", @"Two", @"Three", @"Four", @"Five", @"Six", @"Seven", @"Eight"]];
+    HMSegmentedControl *segmentedControl1 = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"One", @"Two-Two", @"Three-Three-Three", @"Four-Four-Four-Four", @"Five", @"Six", @"Seven", @"Eight"]];
     segmentedControl1.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
     segmentedControl1.frame = CGRectMake(0, 60, viewWidth, 40);
-    segmentedControl1.segmentEdgeInset = UIEdgeInsetsMake(0, 10, 0, 10);
     segmentedControl1.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+    segmentedControl1.segmentWidthStyle = HMSegmentedControlSegmentWidthStyleDynamic;
     segmentedControl1.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
     segmentedControl1.verticalDividerEnabled = YES;
+    
+    segmentedControl1.segmentEdgeInset = UIEdgeInsetsMake(0, 30, 0, 30);
+    segmentedControl1.applyTickIndexes = @[@1,@3,@4,@2];
+    segmentedControl1.applyImageSize = CGSizeMake(15, 15);
+    segmentedControl1.applyImage = [UIImage imageNamed:@"tick.png"];
+    segmentedControl1.applyImageRightMargin = 5.0f;
+    segmentedControl1.applyImageTopMargin = 0.0f;
+    
     segmentedControl1.verticalDividerColor = [UIColor blackColor];
     segmentedControl1.verticalDividerWidth = 1.0f;
     [segmentedControl1 setTitleFormatter:^NSAttributedString *(HMSegmentedControl *segmentedControl, NSString *title, NSUInteger index, BOOL selected) {
@@ -50,7 +58,6 @@
     }];
     [segmentedControl1 addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:segmentedControl1];
-    
     
     // Segmented control with images
     HMSegmentedControl *segmentedControl2 = [[HMSegmentedControl alloc] initWithSectionImages:@[[UIImage imageNamed:@"1"], [UIImage imageNamed:@"2"], [UIImage imageNamed:@"3"], [UIImage imageNamed:@"4"]] sectionSelectedImages:@[[UIImage imageNamed:@"1-selected"], [UIImage imageNamed:@"2-selected"], [UIImage imageNamed:@"3-selected"], [UIImage imageNamed:@"4-selected"]]];

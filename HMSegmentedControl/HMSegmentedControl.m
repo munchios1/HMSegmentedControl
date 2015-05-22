@@ -337,6 +337,10 @@
                 
                 [self.scrollView.layer addSublayer:verticalDividerLayer];
             }
+            
+            if ([self.applyTickIndexes containsObject:[NSNumber numberWithInteger:idx]]) {
+                [self addTickWithFullRect:rect];
+            }
         
             [self addBackgroundAndBorderLayerWithRect:fullRect];
         }];
@@ -498,6 +502,17 @@
         borderLayer.backgroundColor = self.borderColor.CGColor;
         [backgroundLayer addSublayer: borderLayer];
     }
+}
+
+- (void)addTickWithFullRect:(CGRect)rect {
+    CGSize imgSize =  self.applyImageSize;
+    CALayer *backgroundLayer = [CALayer layer];
+    backgroundLayer.frame = rect;
+    [self.scrollView.layer insertSublayer:backgroundLayer atIndex:0];
+    CALayer *tickLayer = [CALayer layer];
+    tickLayer.contents = (id)self.applyImage.CGImage;
+    tickLayer.frame = CGRectMake(rect.size.width - imgSize.width - self.applyImageRightMargin, (rect.size.height/2) - (imgSize.height/2) + self.applyImageTopMargin, imgSize.width, imgSize.height);
+    [backgroundLayer addSublayer:tickLayer];
 }
 
 - (void)setArrowFrame {

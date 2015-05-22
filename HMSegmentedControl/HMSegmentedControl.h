@@ -225,6 +225,36 @@ typedef enum {
  */
 @property (nonatomic) BOOL shouldAnimateUserSelection;
 
+@property (nonatomic) UIImage *applyImage;
+
+/**
+Default is nil. Set some image like checkmark to show apply on some particular segment.
+*/
+
+@property (nonatomic) CGSize applyImageSize;
+
+/**
+Default is CGSizeZero. Set some size to display tick image.
+*/
+
+@property (nonatomic) NSArray *applyTickIndexes;
+
+/**
+Default is blank. Set some index array on which you want to show tick image.
+*/
+
+@property (nonatomic) CGFloat applyImageRightMargin;
+
+/**
+ Default is 0.0. This space will define right margin of apply image from border.
+*/
+
+@property (nonatomic) CGFloat applyImageTopMargin;
+
+/**
+ Default is 0.0. This space will define top margin of apply image from border.
+ */
+
 - (id)initWithSectionTitles:(NSArray *)sectiontitles;
 - (id)initWithSectionImages:(NSArray *)sectionImages sectionSelectedImages:(NSArray *)sectionSelectedImages;
 - (instancetype)initWithSectionImages:(NSArray *)sectionImages sectionSelectedImages:(NSArray *)sectionSelectedImages titlesForSections:(NSArray *)sectiontitles;

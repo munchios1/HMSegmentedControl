@@ -33,6 +33,7 @@
 		54F05AE91689D34A0064FCE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F05AE81689D34A0064FCE1 /* AppDelegate.m */; };
 		54F05AF21689D34B0064FCE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F05AF11689D34B0064FCE1 /* ViewController.m */; };
 		54F05B001689D38C0064FCE1 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F05AFF1689D38C0064FCE1 /* HMSegmentedControl.m */; };
+		C95E1C251B0F1D3C008F169D /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E1C241B0F1D3C008F169D /* tick@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		54F05AFB1689D3650064FCE1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		54F05AFE1689D38C0064FCE1 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = HMSegmentedControl.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		54F05AFF1689D38C0064FCE1 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		C95E1C241B0F1D3C008F169D /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		54F05AFD1689D38C0064FCE1 /* HMSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
+				C95E1C241B0F1D3C008F169D /* tick@2x.png */,
 				54F05AFE1689D38C0064FCE1 /* HMSegmentedControl.h */,
 				54F05AFF1689D38C0064FCE1 /* HMSegmentedControl.m */,
 			);
@@ -226,6 +229,7 @@
 			files = (
 				54F05AE31689D34A0064FCE1 /* InfoPlist.strings in Resources */,
 				54E531BE16B951AB005F17A1 /* 1-selected.png in Resources */,
+				C95E1C251B0F1D3C008F169D /* tick@2x.png in Resources */,
 				54E531BF16B951AB005F17A1 /* 1-selected@2x.png in Resources */,
 				54E531C016B951AB005F17A1 /* 1.png in Resources */,
 				54E531C116B951AB005F17A1 /* 1@2x.png in Resources */,
