@@ -334,12 +334,15 @@
                 CALayer *verticalDividerLayer = [CALayer layer];
                 verticalDividerLayer.frame = rectDiv;
                 verticalDividerLayer.backgroundColor = self.verticalDividerColor.CGColor;
-                
                 [self.scrollView.layer addSublayer:verticalDividerLayer];
             }
             
             if ([self.applyTickIndexes containsObject:[NSNumber numberWithInteger:idx]]) {
-                [self addTickWithFullRect:rect];
+                if (self.segmentWidthStyle == HMSegmentedControlSegmentWidthStyleDynamic) {
+                    [self addTickWithFullRect:rect];
+                }else {
+                   [self addTickWithFullRect:fullRect];
+                }
             }
         
             [self addBackgroundAndBorderLayerWithRect:fullRect];
